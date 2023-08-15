@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>SORTEIO</h1>
+    <input type="text" placeholder="digite um nome" id="nome">
+    <button onclick="adicionar()">ADICIONAR</button>
+    <button onclick="">SORTEAR</button>
+    <div id="sorteio"></div>
+    <div id="ganhador"></div>
+
+    <script>
+        // fazer o array fora da função para acabar não limpando o que voce digita,
+        // seria inutil, não sofre a influencia da fruncao para limpar ela
+        var nomes = []
+        function adicionar(){
+            const nome = document.getElementById("nome").value
+            const sorteio = document.querySelector("#sorteio")
+            sorteio.innerHTML = " "
+            
+            nomes.push(nome)
+            // para interar o array
+           for(i=0; i <nomes.length; i++){
+                sorteio.innerHTML += nomes[i] + "<br>"
+            }
+
+            function sorteio(){
+                var numero = Math.random() * nomes.length
+                var indice = Math.floor(numero)
+                const ganhador = documen.querySelector("ganhador")
+                ganhador.innerHTML = nomes[indice]
+            }
+            // o math vai formar numeros entre 0 a , então para nao ficar quenrado se coloca o outro tipo de math
+            // foor retorna o menor numero inteiro
+            
+        }
+
+    </script>
+</body>
+</html>
