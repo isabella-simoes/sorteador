@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sortear</title>
+</head>
+<body>
+    <center>
+        <h1>SORTEIO</h1>
+        <br><br><br>
+        <input type="text" id="nome"><br>
+        <br>
+        <br>
+        <button onclick="nome()">salvar</button>
+        <button onclick="sorteio()">sortear</button>
+        <div id="container">
+            <div id="res"></div>
+            <div id="sorte"></div>
+        </div>
+    </center>
+
+
+    <script>
+        var nomes = []
+        function nome(){
+            var sorte = document.getElementById("nome").value
+            nomes.push(sorte)
+            var res = document.getElementById("res")
+            res.innerHTML = " "
+            for(i=0; i <nomes.length; i++){
+                res.innerHTML += nomes[i] + "<br>"
+            }
+
+        }
+        function sorteio(){
+            var sorte = document.getElementById("sorte")
+            var num = Math.round(Math.random () * nomes.length)
+            sorte.innerHTML = "parabéns " + nomes[num]
+        }
+    </script>
+</body>
+</html>
