@@ -1,0 +1,1 @@
+ganhador.innerHTML= "<h4> O vencedor é: " + nome[indice] + "</h4>
